@@ -1,0 +1,42 @@
+@use "../../scss/" as *;
+.row {
+     margin-bottom: 2rem;
+     &_header {
+          @include flex(center, center);
+          justify-content: space-between;
+          color: $txt-color;
+          font-weight: 200;
+     }
+     &_posters {
+          .swiper-slide {
+               width: 12%;
+
+               @include tablet {
+                    width: 25%;
+               }
+
+               @include mobile {
+                    width: 30%;
+               }
+
+               .movie_poster {
+                    cursor: pointer;
+                    transition: transform 0.3s ease;
+                    img {
+                         height: 320px;
+                         object-fit: cover;
+                         @include mobile {
+                              height: 240px;
+                         }
+                         @include smallMobile {
+                              height: 160px;
+                         }
+                    }
+                    &:hover {
+                         transform: scale(1.05);
+                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    }
+               }
+          }
+     }
+}

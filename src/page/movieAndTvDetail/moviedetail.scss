@@ -1,0 +1,103 @@
+@use "../../scss/" as *;
+
+.movie_detail_section {
+     width: 100%;
+     .movie_detail_background {
+          width: 100%;
+          height: 800px;
+          object-fit: cover;
+          @include tablet {
+               width: 100%;
+               height: 600px;
+          }
+     }
+     .movie_detail_wrap {
+          position: absolute;
+          top: 100px;
+          .movie_detail_primary {
+               display: flex;
+               justify-content: center;
+               width: 100%;
+
+               .movie_detail_poster {
+                    width: 18%;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                    background: linear-gradient(
+                         to right bottom,
+                         rgba(43, 35, 31, 0.507),
+                         rgba(56, 40, 37, 0.363)
+                    );
+
+                    img {
+                         width: 100%;
+                         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                    }
+                    @include tablet {
+                         width: 24%;
+                         height: 320px;
+                    }
+                    @include mobile {
+                         width: 28%;
+                         height: 250px;
+                    }
+                    @include smallMobile {
+                         height: 220px;
+                    }
+               }
+               .movie_detail_wrap_title {
+                    background: linear-gradient(
+                         to right bottom,
+                         rgba(43, 35, 31, 0.507),
+                         rgba(56, 40, 37, 0.363)
+                    );
+                    .movie_detail_rated,
+                    .movie_detail_release_date,
+                    .movie_detail_overview,
+                    .alert {
+                         color: $txt-color;
+                    }
+                    padding-left: 15px;
+                    background-color: transparent;
+                    width: 45%;
+                    color: $txt-color;
+                    .movie_detail_btn {
+                         color: $txt-color;
+                         cursor: pointer;
+                         color: rgba(255, 255, 255, 0.7);
+                         padding: 6px;
+                         border-radius: 4px;
+                         background-color: rgba(3, 65, 116, 255);
+                         cursor: pointer;
+                         &:hover {
+                              color: $main-color;
+                         }
+                    }
+                    .alert {
+                         display: none;
+                    }
+               }
+          }
+     }
+}
+
+.movie_detail_trailers {
+     width: 100%;
+     @include flex(center, center);
+     flex-direction: column;
+     .movie_detail_trailer {
+          width: 600px;
+          height: 390px;
+          @include mobile {
+               width: 100%;
+               height: 220px;
+          }
+          .movie_detail_iframe {
+               width: 100%;
+               height: 100%;
+          }
+     }
+}

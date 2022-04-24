@@ -1,0 +1,124 @@
+@use "../../scss/" as *;
+
+.header_wrap {
+     position: fixed;
+     width: 100%;
+     top: 0;
+     left: 0;
+     background-color: transparent;
+     transition: all 0.3s ease;
+     z-index: 99;
+     .header {
+          height: $header-height;
+          color: $txt-color;
+          font-weight: 400;
+          @include flex(center, center);
+          justify-content: space-between;
+
+          .header_nav {
+               @include flex(center, center);
+               .header_nav-logo {
+                    width: 90px;
+                    margin-right: 20px;
+                    cursor: pointer;
+                    @include smallMobile {
+                         width: 40px;
+                         margin-right: 5px;
+                    }
+                    @include mobile {
+                         width: 50px;
+                    }
+                    img {
+                         width: 100%;
+                    }
+               }
+
+               .header_nav-menu {
+                    @include flex(center, center);
+                    .header_nav-item {
+                         position: relative;
+                         margin: 0 20px;
+                         @include smallMobile {
+                              margin: 0 2px;
+                         }
+                         @include mobile {
+                              margin: 0 8px;
+                         }
+
+                         &::after {
+                              content: "";
+                              position: absolute;
+                              bottom: 0;
+                              left: 50%;
+                              transform: translateX(-50%);
+                              width: 0;
+                              height: 2px;
+                              background-color: $main-color;
+                              transition: width 0.5s ease;
+                         }
+                         &:hover::after {
+                              width: 100%;
+                         }
+
+                         &:hover a {
+                              color: $main-color;
+                         }
+                         .active {
+                              color: $main-color;
+                         }
+                    }
+               }
+          }
+          .header_search {
+               position: relative;
+               display: flex;
+               justify-content: flex-end;
+               .header_search-input {
+                    color: $txt-color;
+                    height: 26px;
+                    width: 0;
+                    background-color: transparent;
+                    outline: none;
+                    border: 0;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    transition: all 0.3s ease;
+
+                    @include mobile {
+                         height: 22px;
+                    }
+               }
+
+               .header_search-input-active {
+                    width: 200px;
+                    border: 1px solid rgba(#ffffff, 0.8);
+
+                    @include mobile {
+                         width: 160px;
+                    }
+
+                    @include smallMobile {
+                         width: 120px;
+                    }
+               }
+
+               i {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    cursor: pointer;
+                    z-index: 10;
+                    top: 4px;
+                    right: 4px;
+                    opacity: 0.7;
+
+                    @include tablet {
+                         top: 6px;
+                    }
+                    &:hover {
+                         opacity: 1;
+                    }
+               }
+          }
+     }
+}

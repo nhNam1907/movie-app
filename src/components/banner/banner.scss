@@ -1,0 +1,53 @@
+@use "../../scss/" as *;
+
+.banner {
+     position: relative;
+     .banner_bg {
+          img {
+               width: 100%;
+          }
+          .container {
+               position: absolute;
+               top: 380px;
+               color: $txt-color;
+               @include tablet {
+                    top: 170px;
+               }
+               @include mobile {
+                    top: 80px;
+               }
+               @include smallMobile {
+                    top: 50px;
+               }
+               .banner_detail {
+                    width: 500px;
+                    @include tablet {
+                         width: 50%;
+                    }
+
+                    .banner_btn {
+                         color: rgba(255, 255, 255, 0.7);
+                         padding: 6px;
+                         border-radius: 4px;
+                         background-color: rgba(0, 0, 0, 0.4);
+                         cursor: pointer;
+                         @include smallMobile {
+                              font-size: 10px;
+                         }
+                         &:hover {
+                              color: rgba(255, 255, 255, 0.9);
+                              background-color: rgba(0, 0, 0, 0.6);
+                         }
+                    }
+                    .banner_descr {
+                         overflow: hidden;
+                         text-overflow: ellipsis;
+                         display: -webkit-box;
+                         -webkit-line-clamp: 3;
+                         line-clamp: 3;
+                         -webkit-box-orient: vertical;
+                    }
+               }
+          }
+     }
+}

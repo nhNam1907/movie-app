@@ -1,0 +1,41 @@
+@use "../../scss/" as *;
+
+.movies {
+     margin-top: 2rem;
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     gap: 20px;
+     padding-left: 20px;
+     align-items: center;
+     @include tablet {
+          grid-template-columns: repeat(5, 1fr);
+     }
+     @include mobile {
+          grid-template-columns: 1fr 1fr 1fr;
+     }
+     @include smallMobile {
+          padding-left: 6px;
+          grid-template-columns: 1fr 1fr;
+     }
+     .movie {
+          .movie-img {
+               object-fit: cover;
+               cursor: pointer;
+               height: 320px;
+               transition: transform 0.3s ease;
+               @include tablet {
+                    height: 220px;
+               }
+               @include mobile {
+                    height: 180px;
+               }
+               @include smallMobile {
+                    height: 160px;
+               }
+               &:hover {
+                    transform: scale(1.1);
+               }
+          }
+     }
+}

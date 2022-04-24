@@ -1,0 +1,14 @@
+@use "../../scss/" as *;
+
+.back-btn {
+     color: $txt-color;
+     cursor: pointer;
+     color: rgba(255, 255, 255, 0.7);
+     padding: 6px;
+     border-radius: 4px;
+     background-color: rgba(3, 65, 116, 255);
+     cursor: pointer;
+     &:hover {
+          color: $main-color;
+     }
+}
