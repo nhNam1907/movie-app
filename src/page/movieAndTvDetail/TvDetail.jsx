@@ -109,7 +109,7 @@ function MovieDetail({ externalId, ids }) {
                          <div className="movie_detail_trailer mb-2" key={index}>
                               <iframe
                                    className="movie_detail_iframe"
-                                   src={`http://www.youtube.com/embed/${item.key}`}
+                                   src={`https://www.youtube.com/embed/${item.key}`}
                                    title="Movie Trailer"
                               ></iframe>
                          </div>
